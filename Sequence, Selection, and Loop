@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>My Practice</title>
+</head>
+<body>
+
+    <h1> This is my script.</h1>
+
+    <script>
+        // April 2022;
+        var food = new Array('grape', 'apple', 'cheese', 'pizza');
+       /*
+        for (var currItem of food){
+
+            console.log(`${myString} ${currItem}`);
+            break; //Optional break line if you want to print once or many times.
+        }
+        */
+
+        //Check if the incrementor is even.
+        for(var i = 0; i<food.length; i++){
+            if (i % 2 == 0){
+                //if its even, make the array element uppercase
+                console.log(`${myString} ${foodUpper.toUpperCase()}`);
+            } else {
+                console.log(`${myString} ${foods[i]} \n`);
+            }
+        }
+    </script>
+
+    <h2> Next : </h2>
+
+    <script>
+        var myString = "I am really hungry for some";
+        console.log(myString);
+        
+        var myUpperString = myString.toUpperCase(); //Makes the code uppercase.
+        console.log(myUpperString);
+
+        var reallyLocation = myString.search('really');
+        var specialWord = myString.substr(reallyLocation, 6);
+        specialWord = specialWord.toUpperCase();
+
+        var newString = myString.replace('really', specialWord);
+        console.log(newString);
+    </script>
+</body>
+</html>
