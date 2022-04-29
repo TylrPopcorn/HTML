@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> This is a test example </h1>
+    <h4>Capturing Scroll Events in the console</h4>
+   
+    <script>
+    //April/2022;
+    
+        var pagetop; //Used to determine the current numb
+
+        window.addEventListener('scroll', function(){ //each time the window gets scrolled
+            pagetop = window.pageYOffset;
+            console.log(pagetop); //print out the offset of y.
+        })
+
+        window.addEventListener('resize', function(){ //each time the window gets resized
+            console.log(`The page width is ${window.innerWidth}`) //page width.
+            console.log(`The page height is ${window.innerHeight}`) //page height. //print out the height
+        })
+
+    </script>
+
+    <div>----------------</div> //spacer
+
+    <h2> Key Down Event </h2> //title
+    <p> Press a key on the keyboard </p>
+
+    <script>
+        document.addEventListener("keydown", function(keyPressed){ //each time a key gets pressed on the keyboard.
+            alert(`${keyPressed.key} key was pressed`); //warn.
+        })
+    </script>
+
+</body>
+
+</html>
