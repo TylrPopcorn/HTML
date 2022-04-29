@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> this is a test example </h1>
+   <button> This is a button </button>
+
+   <script>
+       var btn = document.querySelector("button"); //Get the button.
+
+        /* Simple Example:
+       function ouch(){
+           alert("I told you I was a buttson.");
+       }
+
+       btn.onclick = ouch; //Allow the button to be clicked on.
+        */
+
+        //Listen:
+      btn.addEventListener(
+          'click', 
+          function(event){  //Make the button turn red
+            event.target.style.backgroundColor = "red"
+
+            alert("I told you I was a button. Now I am angry!");  //Alert.
+            }
+        );
+   </script>
+</body>
+
+</html>
