@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="annika">"here is some text foo."</p>
+    <p class="myname">this has no id. it has a class</p>
+    <h4 class="myname">header 4</h4>
+
+
+    <script>
+        //----------Functions---------//
+        var functions = new Array();
+        //Get element by id.
+        functions.getElement_Id = (obj) => {
+            if (obj == "red") { //Check the variable color.
+                document.getElementById("annika").style.color = "red"; //Change the color
+            } else {
+                document.getElementById("annika").style.color = "blue"; //change the color
+            }
+        }
+
+        //Get element by tag name.
+        functions.getElement_TagName = function () {
+            var myText = document.getElementsByTagName("p"); //get all the paragraphs.
+            for (var x = 0; x < myText.length; x++) {
+                myText[x].style.color = "purple"; // change all the colors of the text.
+            }
+        }
+
+        //Replace element.
+        functions.Replace_element = function(obj) {
+           var GrabDoc = document.querySelector(obj) //Try to get the item wanted.
+
+            if (GrabDoc != null) { //If it can be found then
+                GrabDoc.innerHTML = "<p>This is a new paragraph.</p>"; //Change the inner html.
+            }
+        }
+
+        //Add a class.
+        functions.AddClass = function(obj, className){
+            var GrabDoc = document.querySelector(obj); //Find the item needed
+
+            if (GrabDoc != null) {
+                GrabDoc.ClassName = className; //Change the classname or add a className.
+            }
+        }
+        //--------------------------//
+        //Invoke the functions.
+        functions["getElement_Id"]("red");
+        functions.getElement_TagName();
+    </script>
+
+    <div id = "Special">
+        <p class = "annika">This is another text line.</p>
+        <p>Here is a id/class free text.</p>
+        <p id="only1id">This is the ID paragraph</p>
+        <p class="valid">This is another text line</p>
+        <h5 class="valid">This is another text line</h5>
+    </div>
+
+    <script>
+        //Script 2:
+        var myText = document.querySelector('#Special .annika');
+        myText.style.color = "green"; //Change the color 
+
+        myText = document.querySelectorAll('#Special .valid'); //Get all of the qualifying objs.
+        console.log(myText); //print.
+
+        for(var x=0; x<myText.length;x++){//Loop
+         myText[x].style.color = "yellow"; //Change the color to yellow.
+        }
+
+        var deleteParagraphs = Math.random() //Choose a random number
+        deleteParagraphs = Math.round(deleteParagraphs) //Decide between 0 and 1.
+    
+        if (deleteParagraphs == 1) { //If the option came out to 1 then
+          functions.Replace_element('#Special'); //invoke function.
+        } else {
+            functions.AddClass("myname", "annika"); //invoke function.
+        }
+    </script>
+
+</body>
+
+</html>
