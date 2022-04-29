@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+    <p id="annika">"here is some text foo."</p>
+    <p class="myname">this has no id. it has a class</p>
+    <h4 class="myname">header 4</h4>
+    </div>
+
+    <script>
+        //4/29/22//
+        
+        //functions:
+        var functions = new Array();
+
+        //Add an atrribute:
+        functions.SetAttribute = (variable) => {
+            var tags = document.getElementsByClassName(variable);
+
+            for(var i = 0; i<tags.length; i++) {
+                tags[i].setAttribute("checked", "checked");
+            }
+        }
+        
+        //Add an element:
+        functions.AddElement = (variable) => {
+            var myTag = document.createElement(variable);
+            var mySentence = document.createTextNode('second paragraph');
+            myTag.appendChild(mySentence);
+            document.querySelector('div').appendChild(myTag);
+        }
+
+        //Remove an element:
+        functions.RemoveElement = function() {
+            var myDiv = document.querySelector('div');
+            mydiv.RemoveElement(myDiv.removeChild[1]);
+
+        }
+        //-----------------------\\
+
+
+        //invoke:
+        functions.SetAttribute("myname");
+        functions.AddElement("p");
+        functions.RemoveElement();
+        
+    </script>
+</body>
+
+</html>
